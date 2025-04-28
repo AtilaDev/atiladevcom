@@ -1,0 +1,43 @@
+---
+import Separator from "@/components/Separator.astro";
+import ServiceCard from "@/components/ServiceCard.astro";
+import Layout from "@/layouts/Layout.astro";
+const pageTitle = "Services";
+
+const services = [
+  {
+    num: "01",
+    title: "Web Development",
+    description:
+      "I design and build responsive, high-performance websites and web apps using React.js, Next.js, Astro, TailwindCSS, and modern UI frameworks. Whether it's starting from scratch or improving an existing product, I deliver clean, scalable code focused on user experience and conversion.",
+  },
+  {
+    num: "02",
+    title: "Mobile Development",
+    description:
+      "I develop cross-platform mobile applications using React Native and Expo, ready for iOS and Android. From MVPs to full-featured apps, I take care of the entire development cycle, including publishing to the App Store and Google Play.",
+  },
+  {
+    num: "03",
+    title: "Backend Development",
+    description:
+      "I build and integrate scalable backends using NestJS, Firebase, Supabase, PostgreSQL, MongoDB. From creating RESTful APIs to backend-for-frontend architectures, I ensure fast, secure, and maintainable server-side logic tailored to your business needs.",
+  },
+  {
+    num: "04",
+    title: "Tech Consulting & Training",
+    description:
+      "I provide hands-on consulting, technical mentoring, and training in React.js, React Native, Expo, Next.js, and TypeScript. Whether you need architecture guidance, code reviews, or to upskill your team, I help you accelerate delivery and raise the technical bar.",
+  },
+];
+---
+
+<Layout pageTitle={pageTitle}>
+  <section class="flex flex-col justify-center mb-12">
+    <div class="a-container mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-16 md:items-start">
+        {services.map((service) => <ServiceCard {...service} />)}
+      </div>
+    </div>
+  </section>
+</Layout>

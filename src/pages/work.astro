@@ -1,0 +1,128 @@
+---
+import Ph_exponentials from "../assets/work/ph_exponentials.png";
+import Icons_app from "../assets/work/Icons_app.png";
+import qbox from "../assets/work/qbox.png";
+import VintageCamera from "../assets/work/vintagecamera.png";
+import UseCalendar from "../assets/work/useCalendar.png";
+import Directory from "../assets/work/directory.png";
+
+import Layout from "@/layouts/Layout.astro";
+import ProjectCard from "@/components/ProjectCard.astro";
+const pageTitle = "Work";
+
+const projects = [
+  {
+    num: "01",
+    category: "fullstack",
+    title: "Pablo Heinig - Exponential Apps",
+    description:
+      "Developed 11 mobile apps (iOS and Android) for the Exponential Apps program, managing the entire development lifecycle and app store publishing (used between 2017/2022).",
+    stack: [
+      { name: "React.js" },
+      { name: "React Native" },
+      { name: "Expo" },
+      { name: "Typescript" },
+      { name: "Firebase" },
+      { name: "Node.js" },
+      { name: "express" },
+      { name: "Vue.js" },
+      { name: "Quasar" },
+    ],
+    image: Ph_exponentials,
+    live: "https://pabloheinig.com/exponential_apps.html",
+    github: "",
+  },
+  {
+    num: "02",
+    category: "frontend",
+    title: "Directory",
+    description:
+      "Developed a web-based font directory and search engine tailored for the expo-google-fonts package, enabling users to browse the full font list and instantly retrieve ready-to-use import statements, streamlining font integration in Expo and React Native projects.",
+    stack: [
+      { name: "Next.js" },
+      { name: "Material UI" },
+      { name: "Typescript" },
+      { name: "Web" },
+      { name: "iOS" },
+      { name: "Android" },
+      { name: "open-source" },
+    ],
+    image: Directory,
+    live: "https://directory-by-atiladev-com.netlify.app/",
+    github: "https://github.com/AtilaDev/Directory2",
+  },
+  {
+    num: "03",
+    category: "frontend",
+    title: "Icons",
+    description: "",
+    stack: [
+      { name: "Expo" },
+      { name: "React Native" },
+      { name: "Web" },
+      { name: "iOS" },
+      { name: "Android" },
+      { name: "open-source" },
+    ],
+    image: Icons_app,
+    live: "https://icons.expo.fyi/",
+    github: "https://github.com/expo/vector-icons/tree/AtilaDev/master",
+  },
+  {
+    num: "04",
+    category: "frontend",
+    title: "useCalendar Hook",
+    description: "This is an easy hook to use expo-calendar.",
+    stack: [
+      { name: "Expo" },
+      { name: "React Native" },
+      { name: "Calendar" },
+      { name: "iOS" },
+      { name: "Android" },
+      { name: "open-source" },
+    ],
+    image: UseCalendar,
+    live: "https://medium.com/@FavreLeandro/how-to-use-usecalendar-hook-for-expo-and-react-native-a1d2bcc3aa1c",
+    github: "https://github.com/AtilaDev-team/useCalendar",
+  },
+  {
+    num: "05",
+    category: "frontend",
+    title: "QuizBox Vision Challenge",
+    description:
+      "QuizBox Vision it's a question and answer game developed by Leandro Favre",
+    stack: [
+      { name: "Expo" },
+      { name: "React Native" },
+      { name: "Open Trivia DATABASE" },
+      { name: "open-source" },
+    ],
+    image: qbox,
+    live: "",
+    github: "https://github.com/AtilaDev/QuizBoxVision/tree/main",
+  },
+  {
+    num: "06",
+    category: "fullstack",
+    title: "Vintage Slide Digitization Solution",
+    description:
+      "Developed a custom solution using Raspberry Pi to digitize 3,500 slides in five days, with Python scripts optimizing the image capture and cropping process.",
+    stack: [
+      { name: "Python" },
+      { name: "Raspberry Pi" },
+      { name: "Pi Camera" },
+    ],
+    image: VintageCamera,
+    live: "",
+    github: "",
+  },
+];
+---
+
+<Layout pageTitle={pageTitle}>
+  <section class="flex flex-col justify-center mb-12">
+    <div class="max-w-6xl mx-auto space-y-10">
+      {projects.map((project) => <ProjectCard {...project} />)}
+    </div>
+  </section>
+</Layout>

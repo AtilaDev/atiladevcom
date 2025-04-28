@@ -1,0 +1,20 @@
+---
+import { links } from "@/lib/utils";
+const pathname = Astro.url.pathname;
+---
+
+<nav class="flex gap-8">
+  {
+    links.map((link) => {
+      if (link.mobile) return;
+      return (
+        <a
+          href={link.path}
+          class={`${link.path === pathname && "text-cyan-400 border-b-2 border-cyan-400"} capitalize font-bold hover:text-cyan-400 transition-all`}
+        >
+          {link.name}
+        </a>
+      );
+    })
+  }
+</nav>

@@ -1,0 +1,12 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@layer base {
+  body {
+    @apply bg-[#1e1e1e] text-slate-100 transition-all;
+  }
+
+  .a-container {
+    @apply max-w-[820px] mx-auto px-4;
+  }
+}

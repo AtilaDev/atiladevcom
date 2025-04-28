@@ -1,0 +1,34 @@
+---
+import { Image } from "astro:assets";
+import EmailLogo from "../assets/email.svg";
+import GithubLogo from "../assets/github.svg";
+import LinkedinLogo from "../assets/linkedin.svg";
+import XLogo from "../assets/x.svg";
+
+const socials = [
+  {
+    icon: EmailLogo,
+    path: "mailto:lfavre82@gmail.com?subject=Contact from Portfolio&body=Hello Leandro, ",
+    alt: "Email",
+  },
+  { icon: GithubLogo, path: "https://github.com/AtilaDev", alt: "Github" },
+  {
+    icon: LinkedinLogo,
+    path: "https://www.linkedin.com/in/leandro-f-7a06a8171/",
+    alt: "LinkedIn",
+  },
+  { icon: XLogo, path: "https://x.com/FavreLeandro", alt: "X" },
+];
+
+const { containerStyles, iconStyles } = Astro.props;
+---
+
+<div class={containerStyles}>
+  {
+    socials.map((item) => (
+      <a href={item.path} class={iconStyles} target="_blank">
+        <Image src={item.icon} alt={item.alt} width={24} height={24} />
+      </a>
+    ))
+  }
+</div>

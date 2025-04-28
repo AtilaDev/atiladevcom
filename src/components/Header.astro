@@ -1,0 +1,27 @@
+---
+import Nav from "@/components/Nav.astro";
+import MobileNav from "@/components/MobileNav";
+import Separator from "./Separator.astro";
+const { pathname } = Astro.url;
+---
+
+<header class="py-8 lg:pt-10 lg:pb-20">
+  <div class="flex justify-between items-center mb-8">
+    <!-- logo -->
+    <h1 class="text-4xl font-semibold">
+      <a href="/">
+        Atila<span class="text-cyan-400">Dev</span>
+      </a>
+    </h1>
+    <!-- desktop now & hire me button -->
+    <div class="hidden md:flex items-center flex-grow justify-end">
+      <!-- desktop nav -->
+      <Nav />
+    </div>
+    <!-- mobile nav -->
+    <div>
+      <MobileNav client:load pathname={pathname} />
+    </div>
+  </div>
+  <Separator />
+</header>
