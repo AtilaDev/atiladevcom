@@ -27,13 +27,15 @@ export default function MobileNav({ pathname }: MobileNavProps) {
         {/* nav */}
         <nav className="flex flex-col justify-center items-center gap-8 mt-32">
           {links.map((link) => {
+            const isActive = pathname === link.path || 
+                           (link.path !== '/' && pathname.startsWith(link.path));
             return (
               <a
                 href={link.path}
                 key={link.name}
                 onClick={() => setOpen(false)}
                 className={`${
-                  link.path === pathname &&
+                  isActive &&
                   "text-cyan-400 border-b-2 border-cyan-400"
                 } capitalize font-bold hover:text-cyan-400 transition-all`}
               >

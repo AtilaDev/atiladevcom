@@ -1,15 +1,18 @@
 ---
 import { links } from "@/lib/utils";
-const pathname = Astro.url.pathname;
+const pathname = new URL(Astro.request.url).pathname;
 ---
 
 <nav class="flex gap-8">
   {
     links.map((link) => {
+      const isActive =
+        pathname === link.path ||
+        (link.path !== "/" && pathname.startsWith(link.path));
       return (
         <a
           href={link.path}
-          class={`${link.path === pathname && "text-cyan-400 border-b-2 border-cyan-400"} capitalize font-bold hover:text-cyan-400 transition-all`}
+          class={`${isActive ? "text-cyan-400 border-b-2 border-cyan-400" : ""} capitalize font-bold hover:text-cyan-400 transition-all`}
         >
           {link.name}
         </a>
