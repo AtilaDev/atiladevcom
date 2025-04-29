@@ -44,7 +44,6 @@ export default function MobileNav({ pathname }: MobileNavProps) {
             );
           })}
         </nav>
-        <span className="text-white">hjola</span>
       </SheetContent>
     </Sheet>
   );
