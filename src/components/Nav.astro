@@ -6,7 +6,6 @@ const pathname = Astro.url.pathname;
 <nav class="flex gap-8">
   {
     links.map((link) => {
-      if (link.mobile) return;
       return (
         <a
           href={link.path}

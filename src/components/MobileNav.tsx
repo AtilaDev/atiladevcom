@@ -27,14 +27,6 @@ export default function MobileNav({ pathname }: MobileNavProps) {
         {/* nav */}
         <nav className="flex flex-col justify-center items-center gap-8 mt-32">
           {links.map((link) => {
-            if (link.separator)
-              return (
-                <div key={link.name}>
-                  <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-                  <span className="font-bold text-xl my-2">Social Links</span>
-                  <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-                </div>
-              );
             return (
               <a
                 href={link.path}
@@ -43,7 +35,7 @@ export default function MobileNav({ pathname }: MobileNavProps) {
                 className={`${
                   link.path === pathname &&
                   "text-cyan-400 border-b-2 border-cyan-400"
-                } text-xl capitalize hover:text-cyan-400 transition-all`}
+                } capitalize font-bold hover:text-cyan-400 transition-all`}
               >
                 {link.name}
               </a>
