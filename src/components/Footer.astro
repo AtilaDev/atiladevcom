@@ -7,19 +7,21 @@ import Socials from "./Socials.astro";
 <div
   class="mb-8 flex items-center justify-between flex-col gap-6 md:flex-row relative group"
 >
-  <span class="text-white/80 text-xs md:text-sm"
+  <div class="md:order-2">
+    <span
+      class="hidden lg:block absolute right-52 opacity-0 transform -translate-x-20 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-700 ease-in-out font-medium text-sm text-white/80"
+    >
+      Contact me!
+    </span>
+    <Socials
+      containerStyles="flex gap-6"
+      iconStyles="w-7 h-7 border border-white/80 rounded flex justify-center items-center [&>img]:invert hover:bg-white/80 hover:[&>img]:invert-0 hover:transition-all duration-500"
+    />
+  </div>
+  <span class="text-white/80 text-xs md:text-sm md:order-1"
     >© 2017-{new Date().getFullYear()} | Leandro Favre - Licensed under <a
       href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
       target="_blank">CC BY-NC-SA 4.0</a
     >
   </span>
-  <span
-    class="hidden lg:block absolute right-52 opacity-0 transform -translate-x-20 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-700 ease-in-out font-medium text-sm text-white/80"
-  >
-    Contact me!
-  </span>
-  <Socials
-    containerStyles="flex gap-6"
-    iconStyles="w-7 h-7 border border-white/80 rounded flex justify-center items-center [&>img]:invert hover:bg-white/80 hover:[&>img]:invert-0 hover:transition-all duration-500"
-  />
 </div>
