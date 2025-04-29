@@ -122,8 +122,21 @@ const projects = [
 
 <Layout pageTitle={pageTitle}>
   <section class="flex flex-col justify-center mb-12">
-    <div class="max-w-6xl mx-auto space-y-10">
-      {projects.map((project) => <ProjectCard {...project} />)}
+    <div class="max-w-6xl mx-auto">
+      <div class="text-white/60 text-lg mb-12">
+        <div class="mb-10 text-wrap w-2xl">
+          A curated selection of the work that best represents my experience and
+          approach. Explore more on my <a
+            class="border-b-1 text-white/80"
+            href="https://github.com/AtilaDev"
+            target="_blank">GitHub repository.</a
+          >
+        </div>
+
+        <div class="space-y-10">
+          {projects.map((project) => <ProjectCard {...project} />)}
+        </div>
+      </div>
     </div>
   </section>
 </Layout>
